@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../store";
 
 const Auth = () => {
+  // susikurti state abiems inputams ir gauti ivestas reiksmes
   // 00 palengvinimas dispatch(authActions.login()); tik jei inputu duomenys atitinka user
   const user = {
     email: "mike@tyson.com",
