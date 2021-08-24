@@ -1,6 +1,28 @@
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 import { createStore } from "redux";
 
 const initialCounterState = { counter: 0, showCounter: true };
+
+// naudojant toolkit mes kuriam createSlice
+const counterSlice = createSlice({
+  name: "counter",
+  initialState: initialCounterState,
+  reducers: {
+    up(state) {
+      state.counter++; // automatiskai perdaroma i state nemutuojancia sintakse naudojant immer
+    },
+    down(state) {
+      state.counter--;
+    },
+    inrcease(state, action) {
+      state.counter = state.counter + action.amount;
+    },
+    toggle(state) {
+      state.showCounter = !state.showCounter;
+    },
+  },
+});
+
 // reducer funkcija
 const counterReducer = (state = initialCounterState, action) => {
   switch (action.type) {
