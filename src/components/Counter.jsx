@@ -3,8 +3,8 @@ import classes from "./Counter.module.css";
 import { counterActions } from "../store/index";
 
 const Counter = () => {
-  const counter = useSelector((state) => state.counter); // automatiskai sukuria subscibe
-  const showCounter = useSelector((state) => state.showCounter); // automatiskai sukuria subscibe
+  const counter = useSelector((state) => state.counter.counter); // automatiskai sukuria subscibe
+  const showCounter = useSelector((state) => state.counter.showCounter); // automatiskai sukuria subscibe
 
   const dispatch = useDispatch();
 
