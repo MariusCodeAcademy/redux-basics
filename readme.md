@@ -6,4 +6,8 @@
 
 3. aprasom actions ir state
 
-4. Provide the store
+4. Provide the store in index.js for <App />
+
+5. use store data useSelector hook
+
+6. useDispatch hook to make action
