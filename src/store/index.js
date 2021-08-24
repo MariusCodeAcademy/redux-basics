@@ -5,13 +5,13 @@ const initialCounterState = { counter: 0, showCounter: true };
 const counterReducer = (state = initialCounterState, action) => {
   switch (action.type) {
     case "UP":
-      state.counter++; // tiesiogiai keiciam state / mutuojam jo reiksme
-      return state; // taip NIEKADA NEDARYTI !!!!!!!!!!!
+      //   state.counter++; // tiesiogiai keiciam state / mutuojam jo reiksme
+      //   return state; // taip NIEKADA NEDARYTI !!!!!!!!!!!
 
-    //   return {
-    //     counter: state.counter + 1,
-    //     showCounter: state.showCounter,
-    //   };
+      return {
+        counter: state.counter + 1,
+        showCounter: state.showCounter,
+      };
     case "DOWN":
       return {
         counter: state.counter - 1,
