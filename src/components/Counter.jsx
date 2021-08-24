@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import classes from "./Counter.module.css";
+import { counterActions } from "../store/index";
 
 const Counter = () => {
   const counter = useSelector((state) => state.counter); // automatiskai sukuria subscibe
@@ -8,17 +9,18 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   const incrementHandler = () => {
-    dispatch({ type: "UP" });
+    // console.log(counterActions.up());
+    dispatch(counterActions.up()); // grazina {type: 'automatiskai sugeneruotas pav'}
   };
   const decrementHandler = () => {
-    dispatch({ type: "DOWN" });
+    dispatch(counterActions.down());
   };
   const increaseHandler = () => {
-    dispatch({ type: "UP_BY", amount: 6 });
+    dispatch(counterActions.inrcease(6)); // grazina {type: 'automatiskai sugeneruotas pav', payload: 6}
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "TOGGLE" });
+    dispatch(counterActions.toggle());
   };
 
   return (

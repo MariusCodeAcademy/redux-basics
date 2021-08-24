@@ -15,7 +15,7 @@ const counterSlice = createSlice({
       state.counter--;
     },
     inrcease(state, action) {
-      state.counter = state.counter + action.amount;
+      state.counter = state.counter + action.payload;
     },
     toggle(state) {
       state.showCounter = !state.showCounter;
