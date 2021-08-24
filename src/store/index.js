@@ -49,3 +49,6 @@ const store = configureStore({
 export const authActions = authSlice.actions;
 export const counterActions = counterSlice.actions;
 export default store;
+
+// panaudoti musu gilias js zinias su es6 import/export ir padalinti sita faila i atskirus
+// counterRedux.js ir authRedux.js failus ir islaikyti ta pati funkcionaluma
