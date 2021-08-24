@@ -22,12 +22,21 @@ const counterSlice = createSlice({
   },
 });
 
+// 01 leisti priloginti vartotoja jei jo email ir pass atitinka user duomenis
+const initAuthState = {
+  isAuthetnticated: false,
+  user: {
+    email: "mike@tyson.com",
+    password: "secret",
+  },
+};
 // authSlice
 const authSlice = createSlice({
   name: "authentication",
-  initialState: { isAuthetnticated: false },
+  initialState: initAuthState,
   reducers: {
-    login(state) {
+    login(state, action) {
+      // validate
       state.isAuthetnticated = true;
     },
     logout(state) {

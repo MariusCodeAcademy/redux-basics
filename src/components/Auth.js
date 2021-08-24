@@ -3,6 +3,12 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../store";
 
 const Auth = () => {
+  // 00 palengvinimas dispatch(authActions.login()); tik jei inputu duomenys atitinka user
+  const user = {
+    email: "mike@tyson.com",
+    password: "secret",
+  };
+
   // auth.jsx ivygdyti login veiksma is mussu authSlice reducers
   const dispatch = useDispatch();
   const loginHandler = (e) => {
