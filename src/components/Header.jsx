@@ -1,6 +1,6 @@
-import classes from "./Header.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "../store/index";
+import classes from './Header.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions } from '../store/authRedux';
 // kai store isAuthenticated  === false tai neromdom linku ir button sako Login
 // header.jsx paspaudus logout turetu mus isloginti. (paspaudus neturetu priloginti atgal)
 const Header = () => {
@@ -17,10 +17,10 @@ const Header = () => {
           {isLoggedIn && (
             <>
               <li>
-                <a href="/">My Products</a>
+                <a href='/'>My Products</a>
               </li>
               <li>
-                <a href="/">My Sales</a>
+                <a href='/'>My Sales</a>
               </li>
             </>
           )}

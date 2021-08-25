@@ -1,47 +1,15 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 
 import counterReducer from './counterRedux';
-
-// 01 leisti priloginti vartotoja jei jo email ir pass atitinka user duomenis
-const initAuthState = {
-  isAuthetnticated: false,
-  user: {
-    email: 'mike@tyson.com',
-    password: 'secret',
-  },
-  users: [
-    {
-      email: 'mike@tyson.com',
-      password: 'secret',
-    },
-  ],
-};
-// authSlice
-const authSlice = createSlice({
-  name: 'authentication',
-  initialState: initAuthState,
-  reducers: {
-    login(state, action) {
-      // validate
-      state.isAuthetnticated = true;
-    },
-    logout(state) {
-      state.isAuthetnticated = false;
-    },
-  },
-});
+import authReducer from './authRedux';
 
 // export store for use
 const store = configureStore({
   reducer: {
     counter: counterReducer,
-    auth: authSlice.reducer,
+    auth: authReducer,
   },
 });
-
-// console.log(counterSlice.actions); // visi musu aprasyti veiksmai
-
-export const authActions = authSlice.actions;
 
 export default store;
 
