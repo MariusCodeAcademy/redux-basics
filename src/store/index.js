@@ -1,44 +1,24 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-const initialCounterState = { counter: 0, showCounter: true };
-
-// naudojant toolkit mes kuriam createSlice
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: initialCounterState,
-  reducers: {
-    up(state) {
-      state.counter++; // automatiskai perdaroma i state nemutuojancia sintakse naudojant immer
-    },
-    down(state) {
-      state.counter--;
-    },
-    inrcease(state, action) {
-      state.counter = state.counter + action.payload;
-    },
-    toggle(state) {
-      state.showCounter = !state.showCounter;
-    },
-  },
-});
+import counterReducer from './counterRedux';
 
 // 01 leisti priloginti vartotoja jei jo email ir pass atitinka user duomenis
 const initAuthState = {
   isAuthetnticated: false,
   user: {
-    email: "mike@tyson.com",
-    password: "secret",
+    email: 'mike@tyson.com',
+    password: 'secret',
   },
   users: [
     {
-      email: "mike@tyson.com",
-      password: "secret",
+      email: 'mike@tyson.com',
+      password: 'secret',
     },
   ],
 };
 // authSlice
 const authSlice = createSlice({
-  name: "authentication",
+  name: 'authentication',
   initialState: initAuthState,
   reducers: {
     login(state, action) {
@@ -54,7 +34,7 @@ const authSlice = createSlice({
 // export store for use
 const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer,
+    counter: counterReducer,
     auth: authSlice.reducer,
   },
 });
@@ -62,7 +42,7 @@ const store = configureStore({
 // console.log(counterSlice.actions); // visi musu aprasyti veiksmai
 
 export const authActions = authSlice.actions;
-export const counterActions = counterSlice.actions;
+
 export default store;
 
 // panaudoti musu gilias js zinias su es6 import/export ir padalinti sita faila i atskirus
